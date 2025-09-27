@@ -1,0 +1,12 @@
+services: views
+  - type: web
+    name: youtube-views-bot
+    env: python
+    repo: https://github.com/Schumynet/YouTubeViews-
+    branch: main
+    buildCommand: pip install -r requirements.txt
+    startCommand: python youtube.py 300 urls.txt 800 3600
+    autoDeploy: true
+    envVars:
+      - key: PYTHONUNBUFFERED
+        value: "1"
